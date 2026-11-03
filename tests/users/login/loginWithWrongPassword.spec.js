@@ -10,7 +10,7 @@ test.beforeEach(async ({ newUserData, usersApi }) => {
 test('Login with wrong password', async ({ newUserData, usersApi }) => {
   const response = await usersApi.loginUser({
     ...newUserData,
-    password: '${newUserData.password}_wrong',
+    password: `${newUserData.password}_wrong`,
   });
 
   await usersApi.assertResponseCode(response, UNPROCESSABLE_ENTITY);
